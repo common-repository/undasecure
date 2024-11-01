@@ -1,0 +1,13 @@
+    <Files ~ ".*\..*">
+        Order Allow,Deny
+        Deny from all
+    </Files>
+
+    <FilesMatch "\.(php|phtml|html|asp|exe|js)$">
+        Deny from all
+    </FilesMatch>
+
+    <FilesMatch "\.(jpg|jpeg|jpe|gif|png|bmp|tif|tiff|doc|docx|pdf|rtf|xls|xlsx|numbers|odt|pages|key|zip|rar|mp3|mp4|pptx|ppt|pps)$">
+        Order Deny,Allow
+        Allow from all
+    </FilesMatch>

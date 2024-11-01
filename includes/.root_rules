@@ -1,0 +1,39 @@
+    Options -Indexes
+
+    <files ~ "^.*\.([Hh][Tt][Aa])">
+        Order Deny,Allow
+        Deny from all
+        satisfy all
+    </files>
+
+    <files .htaccess>
+        Order Allow,Deny
+        Deny from all
+    </files>
+
+    <Files wp-cron.php>
+        Order Allow,Deny
+        Deny from all
+    </Files>
+
+    <Files readme.html>
+        Order Allow,Deny
+        Deny from all
+    </Files>
+
+    <Files wp-config.php>
+        Order Allow,Deny
+        Deny from all
+    </Files>
+
+    <Files xmlrpc.php>
+        Order Deny,Allow
+        Deny from all
+    </Files>
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+        RewriteCond %{QUERY_STRING} (author=\d+) [NC]
+        RewriteRule .* - [F]
+    </IfModule>
